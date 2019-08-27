@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <%- include('bootstrap.ejs')%>
+
     <title>Document</title>
 </head>
+
 <body>
-    <h1>Olá <%= nome %>!</h1>
+    <%- include('navbar.ejs')%>
+    <% for(var i=0; i<1 ; i++){ %>
+    <h1>Olá
+        <%= nome %>!</h1>
+    <% } %>
+    <div class="form row">
+        <form method="POST" class="col-sm-5" action="/">
+            <div class="form-group">
+                <label for="nome">Email address</label>
+                <input type="text" class="form-control" id="nome"  name="nome" aria-describedby="emailHelp"
+                    placeholder="Enter email">
+
+            </div>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </form>
+    </div>
 </body>
+
 </html>
